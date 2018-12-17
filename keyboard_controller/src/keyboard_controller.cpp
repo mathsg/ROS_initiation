@@ -33,7 +33,7 @@ KeyboardController::KeyboardController():
   nh_.param("scale_angular", a_scale_, a_scale_);
   nh_.param("scale_linear", l_scale_, l_scale_);
 
-  twist_pub_ = nh_.advertise<geometry_msgs::Twist>("desired_velocity", 1);
+  twist_pub_ = nh_.advertise<geometry_msgs::Twist>("/kinematics/desired_velocity", 1);
 }
 
 int kfd = 0;

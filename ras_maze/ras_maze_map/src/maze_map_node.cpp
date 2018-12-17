@@ -94,7 +94,7 @@ int main(int argc, char **argv)
     wall_marker.color.r = (255.0/255.0);
     wall_marker.color.g = (0.0/255.0);
     wall_marker.color.b = (0.0/255.0);
-    wall_marker.pose.position.z = 0.2;
+    wall_marker.pose.position.z = 0.1;
 
 
 
