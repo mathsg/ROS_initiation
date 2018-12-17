@@ -1,0 +1,15 @@
+<launch>
+  <arg name="robot_radius" default="0.1"/>
+  <arg name="wheels_radius" default="0.05"/>
+
+  <node pkg="tf" name="lidar_plot" type="static_transform_publisher" args="0 0 0.1 0 0 3.14 0 /robot /laser 100" />
+
+  <node pkg="tf" name="object_plot" type="static_transform_publisher" args="0.1 0 0.15 0 1.57 0 /robot /cam 100" />
+
+  <node pkg="simu_visualization" type="robot_visualization" name="robot_visualization" output="screen">
+    <param name="robot_radius" type="double" value="$(arg robot_radius)"/>
+    <param name="wheels_radius" type="double" value="$(arg wheels_radius)"/>
+  </node>
+
+
+</launch>

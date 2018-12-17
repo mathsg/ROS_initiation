@@ -1,0 +1,6 @@
+<launch>
+
+  <node pkg="rviz" type="rviz" name="rviz"
+      args="-d $(find simu_visualization)/config/simu_maze.rviz"/>
+
+</launch>
