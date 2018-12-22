@@ -11,5 +11,7 @@
     <param name="wheels_radius" type="double" value="$(arg wheels_radius)"/>
   </node>
 
+  <node pkg="simu_visualization" type="map_visualization" name="map_visualization" output="screen"/>
+
 
 </launch>

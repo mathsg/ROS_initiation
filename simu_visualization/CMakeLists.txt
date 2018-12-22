@@ -25,3 +25,7 @@ include_directories(
 add_executable(robot_visualization src/robot_visualization.cpp)
 target_link_libraries(robot_visualization ${catkin_LIBRARIES})
 add_dependencies(robot_visualization ${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_executable(map_visualization src/map_visualization.cpp)
+target_link_libraries(map_visualization ${catkin_LIBRARIES})
+add_dependencies(map_visualization ${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})

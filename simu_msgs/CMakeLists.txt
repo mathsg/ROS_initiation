@@ -8,6 +8,7 @@ add_message_files(
   DIRECTORY msg
   FILES
   RobotPose.msg
+  vectorList.msg
 )
 
 generate_messages(

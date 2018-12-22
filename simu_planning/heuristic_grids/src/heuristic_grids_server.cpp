@@ -1,24 +1,24 @@
 #include <algorithm>
 #include <math.h>
 #include <vector>
-#include "ros/ros.h"
+#include <ros/ros.h>
 
 //The messages
 #include <visualization_msgs/MarkerArray.h>
 
 float control_frequency = 10.0;
 
-class RobotVisualization
+class HeuristicGrid
 {
   public:
 	ros::NodeHandle n;
 	ros::Subscriber pose_sub;
   ros::Publisher robot_visu_pub.
 
-	RobotVisualization()
+	HeuristicGrid()
 	{
 		// Parameters
-		// n.param<double>("/heuristic_grids_server/grid_square_size", grid_square_size, 0.02);
+		n.param<double>("/heuristic_grids_server/grid_cell_size", grid_cell_size, 0.02);
 
     //The different subscribes
 		pose_sub = n.subscribe("/kinematics/robot_pose", 1, &RobotVisualization::pose_callback, this);
@@ -28,17 +28,17 @@ class RobotVisualization
 
 	}
 
+  void create_the_occupancy_grid()
+  {
+    
+  }
 
 
 
   private:
 
-    void pose_callback(const pose_msgs::RobotPose::ConstPtr &msg)
-  	{
-  		the_robot_pose = *msg;
-  	}
+    double grid_cell_size;
 
-    simu_msgs::RobotPose the_robot_pose;
 };
 
 int main(int argc, char **argv)

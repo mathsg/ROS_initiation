@@ -1,6 +1,6 @@
 <launch>
   <!-- HERE STANDS ALL THE IMPORTANT COMMON PARAMETERS -->
-  
+
 
   <!-- launch the kobuki simulation -->
   <include file="$(find ras_lab1_launch)/launch/kobuki_lab1.launch" />
@@ -9,7 +9,12 @@
   <include file="$(find ras_maze_launch)/launch/static_tf.launch" />
 
   <node pkg="ras_maze_map" type="ras_maze_map_node" name="ras_maze_map_node"  >
-	 <param name="map_file" value="$(find ras_maze_map)/maps/lab_maze_2018.txt"/>
+	   <param name="map_file" value="$(find ras_maze_map)/maps/lab_maze_2018.txt"/>
+  </node>
+
+  <node pkg="own_map" type="own_map" name="own_map"  >
+	   <param name="map_file" value="$(find ras_maze_map)/maps/lab_maze_2018.txt"/>
+     <param name="discretization_step" type="double" value="0.01"/>
   </node>
 
   <!-- Launch the plots -->
